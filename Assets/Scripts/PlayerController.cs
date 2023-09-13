@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     float rotateTime;
     float rotateVelocity;
     public Vector3 direction;
-    Vector3 scaleChange, positionChange;
+    public Vector3 scaleChange, positionChange;
     [SerializeField] GameObject player;
     [SerializeField] float movementSpeed;
     public CharacterController controller;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
-    public int maxObjects = 20;
+    public int maxObjects = 40;
     public GameObject[] itemsToPickFrom;
     private List<GameObject> spawnedItems = new List<GameObject>();
     public GameObject character;
@@ -33,7 +33,7 @@ public class ObjectSpawner : MonoBehaviour
 
     private IEnumerator CreateObject()
     {
-        timeToCreateObject = Random.Range(2, 5);
+        timeToCreateObject = Random.Range(1, 3);
 
         yield return new WaitForSecondsRealtime(timeToCreateObject);
 
@@ -60,7 +60,7 @@ public class ObjectSpawner : MonoBehaviour
         if (xPosition < xMinDistance && xPosition > -xMinDistance) xPosition += xMinDistance;
         if (zPosition < zMinDistance && zPosition > -zMinDistance) zPosition += zMinDistance;
 
-        Vector3 positionToSpawn = new Vector3(xPosition, character.transform.position.y, zPosition);
+        Vector3 positionToSpawn = new Vector3(xPosition, character.transform.position.y + 0.2f, zPosition);
 
         int randomIndex = Random.Range(0, itemsToPickFrom.Length);
         GameObject clone = Instantiate(itemsToPickFrom[randomIndex], positionToSpawn, rotationToSpawn);
