@@ -8,45 +8,54 @@ public class PlayerController : MonoBehaviour
 {
     public float energy;
     public int stage;
-    float xMov, yMov;
-    float rotateAngle;
-    bool dashButton;
+    float xMov, zMov;
+    float rotateTime;
+    float rotateVelocity;
+    public Vector3 direction;
+    Vector3 scaleChange, positionChange;
+    [SerializeField] GameObject player;
     [SerializeField] float movementSpeed;
-    [SerializeField] GameObject rotationBody;
+    public CharacterController controller;
     // Start is called before the first frame update
     void Start()
     {
-
-
+        controller = GetComponent<CharacterController>();
+        scaleChange = new Vector3(0.01f, 0.01f, 0.01f);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        PlayerMovement();
+        PlayerMovement();        
     }
 
     void PlayerMovement()
     {
-        xMov = Input.GetAxis("Horizontal");
-        yMov = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.right * Time.deltaTime * movementSpeed * xMov);
-        transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed * yMov);
-        rotateAngle = AngleRotation(xMov,yMov);         
-        rotationBody.transform.eulerAngles = new Vector3(rotationBody.transform.eulerAngles.x, rotationBody.transform.eulerAngles.y, rotationBody.transform.eulerAngles.z)
+        xMov = Input.GetAxisRaw("Horizontal");
+        zMov = Input.GetAxisRaw("Vertical");
+
+        Vector3 dir = new Vector3(xMov, 0, zMov).normalized;
+
+        if (dir.magnitude >= 0.1f)
         {
-            y = rotateAngle
-        };
+            float targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotateVelocity, rotateTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            direction = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            controller.Move(direction.normalized * movementSpeed * Time.deltaTime);
+        }
     }
 
     void ModifySize()
     {
-
+        player.transform.localScale = scaleChange * this.energy;
     }
 
-    void AbsorbObject()
+    public void AbsorbObject(float energy)
     {
-
+        this.energy += energy;
+        Debug.Log("Energy: " + this.energy);
+        ModifyStage();
+        ModifySize();
     }
 
     void TakeDamage()
@@ -56,24 +65,17 @@ public class PlayerController : MonoBehaviour
 
     void ModifyStage()
     {
-
+        if(energy < 100)
+        {
+            stage = 1;
+        }else if (energy >= 100 && energy <= 199)
+        {
+            stage = 2;
+        }else if (energy >= 200 && energy <= 299)
+        {
+            stage = 3;
+        }
+        Debug.Log("Stage: " + stage);
     }
 
-    void Dash()
-    {
-        dashButton = Input.GetKeyDown(KeyCode.Space);
-    }
-
-    float AngleRotation(float xMov, float yMov)
-    {
-        if (xMov == 0 && yMov > 0) rotateAngle = 0;
-        if (xMov > 0 && yMov > 0) rotateAngle = 45;
-        if (xMov > 0 && yMov == 0) rotateAngle = 90;
-        if (xMov > 0 && yMov < 0) rotateAngle = 135;
-        if (xMov == 0 && yMov < 0) rotateAngle = 180;
-        if (xMov < 0 && yMov < 0) rotateAngle = 225;
-        if (xMov < 0 && yMov == 0) rotateAngle = 270;
-        if (xMov < 0 && yMov > 0) rotateAngle = 315;                    
-        return rotateAngle;
-    }
 }
