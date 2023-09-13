@@ -6,11 +6,13 @@ public class ObjectSpawner : MonoBehaviour
 {
     public int maxObjects = 20;
     public GameObject[] itemsToPickFrom;
+    private List<GameObject> spawnedItems = new List<GameObject>();
     public GameObject character;
     float xMaxDistance,  zMaxDistance;
     float xMinDistance, zMinDistance;
+    private float timeToCreateObject;
     
-    const float FOODSIZE = 5f;
+    const float FOODSIZE = 3f;
     const float XMIN = 2f , ZMIN = 2f;
     const float XMAX = 20f, ZMAX = 20f;
 
@@ -23,15 +25,25 @@ public class ObjectSpawner : MonoBehaviour
         TrackCharacterPosition();
         for (int i = 0; i < 10; i++)
         {
-            float xPosition = Random.Range(-xMaxDistance, xMaxDistance);
-            float zPosition = Random.Range(-zMaxDistance, zMaxDistance);
-
-            if (xPosition < xMinDistance && xPosition > -xMinDistance) xPosition += xMinDistance;
-            if (zPosition < zMinDistance && zPosition > -zMinDistance) zPosition += zMinDistance;
-
-            Vector3 spawnPosition = new Vector3(xPosition, character.transform.position.y + 3f, zPosition);
-            PickAndSpawn(spawnPosition, Quaternion.identity);
+            PickAndSpawn(Quaternion.identity);
         }
+
+        StartCoroutine(CreateObject());
+    }
+
+    private IEnumerator CreateObject()
+    {
+        timeToCreateObject = Random.Range(2, 5);
+
+        yield return new WaitForSecondsRealtime(timeToCreateObject);
+
+        if (spawnedItems.Count < maxObjects)
+        {
+            PickAndSpawn(Quaternion.identity);
+        }
+
+        StartCoroutine(CreateObject());
+
     }
 
     // Update is called once per frame
@@ -40,12 +52,21 @@ public class ObjectSpawner : MonoBehaviour
         TrackCharacterPosition();
     }
 
-    private void PickAndSpawn(Vector3 positionToSpawn, Quaternion rotationToSpawn)
+    private void PickAndSpawn(Quaternion rotationToSpawn)
     {
+        float xPosition = Random.Range(-xMaxDistance, xMaxDistance);
+        float zPosition = Random.Range(-zMaxDistance, zMaxDistance);
+
+        if (xPosition < xMinDistance && xPosition > -xMinDistance) xPosition += xMinDistance;
+        if (zPosition < zMinDistance && zPosition > -zMinDistance) zPosition += zMinDistance;
+
+        Vector3 positionToSpawn = new Vector3(xPosition, character.transform.position.y, zPosition);
+
         int randomIndex = Random.Range(0, itemsToPickFrom.Length);
         GameObject clone = Instantiate(itemsToPickFrom[randomIndex], positionToSpawn, rotationToSpawn);
         clone.transform.localScale = new Vector3(FOODSIZE, FOODSIZE, FOODSIZE);
         clone.transform.parent = transform;
+        spawnedItems.Add(clone);
     }
 
     private void TrackCharacterPosition()
