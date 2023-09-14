@@ -49,11 +49,11 @@ public class ObjectSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TrackCharacterPosition();
     }
 
     private void PickAndSpawn(Quaternion rotationToSpawn)
     {
+        TrackCharacterPosition();
         float xPosition = Random.Range(-xMaxDistance, xMaxDistance);
         float zPosition = Random.Range(-zMaxDistance, zMaxDistance);
 
