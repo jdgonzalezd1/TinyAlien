@@ -60,10 +60,13 @@ public class ObjectSpawner : MonoBehaviour
         if (xPosition < xMinDistance && xPosition > -xMinDistance) xPosition += xMinDistance;
         if (zPosition < zMinDistance && zPosition > -zMinDistance) zPosition += zMinDistance;
 
-        Vector3 positionToSpawn = new Vector3(xPosition, character.transform.position.y + 0.2f, zPosition);
-
+        // picks the item to spawn
         int randomIndex = Random.Range(0, itemsToPickFrom.Length);
-        GameObject clone = Instantiate(itemsToPickFrom[randomIndex], positionToSpawn, rotationToSpawn);
+        GameObject itemToSpawn = itemsToPickFrom[randomIndex];
+
+        Vector3 positionToSpawn = new Vector3(xPosition, itemToSpawn.transform.localScale.y / 2 + 0.2f, zPosition);
+
+        GameObject clone = Instantiate(itemToSpawn, positionToSpawn, rotationToSpawn);
         clone.transform.localScale = new Vector3(FOODSIZE, FOODSIZE, FOODSIZE);
         clone.transform.parent = transform;
         spawnedItems.Add(clone);
