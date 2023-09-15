@@ -20,7 +20,7 @@ public class PlayerDash : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && playerCon.energy > 19)
         {
             StartCoroutine(Dash());
         }
@@ -29,7 +29,7 @@ public class PlayerDash : MonoBehaviour
     IEnumerator Dash()
     {
         float startTime = Time.time;
-        playerCon.AbsorbObject(-20);
+        playerCon.AbsorbObject(-10);
         while(Time.time < startTime + dashTime)
         {
             playerCon.controller.Move(playerCon.direction * dashSpeed * Time.deltaTime); 

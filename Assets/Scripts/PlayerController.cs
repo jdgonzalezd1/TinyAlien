@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float energy;
+    public float energy = 10f;
+    public float energyMin = 10f;
     public int stage;
     float xMov, zMov;
     float rotateTime;
@@ -21,10 +22,17 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         scaleChange = new Vector3(0.1f, 0.1f, 0.1f);
+        ModifySize();
+        ModifyStage();
     }
     private void FixedUpdate()
     {
-        PlayerMovement();        
+        // PlayerMovement();        
+    }
+
+    private void Update()
+    {
+        PlayerMovement();
     }
 
     void PlayerMovement()
@@ -52,7 +60,10 @@ public class PlayerController : MonoBehaviour
 
     public void AbsorbObject(float energy)
     {
-        this.energy += energy;
+        if (this.energy + energy > energyMin)
+        {
+            this.energy += energy;
+        }
         Debug.Log("Energy: " + this.energy);
         ModifyStage();
         ModifySize();
