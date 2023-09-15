@@ -1,26 +1,24 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class   CameraController : MonoBehaviour
 {
-    public Vector3 offset;
-    [SerializeField] GameObject player;
-    PlayerController playerController;
-    public Camera playerCamera;
-    float sizeOffset;
+    public PlayerController player;
+    public CinemachineVirtualCamera virtualCamera;
+    private CinemachineTransposer transposer;
+    private float scaleChange;
 
     private void Start()
     {
-        playerController = FindAnyObjectByType<PlayerController>();
-        offset = new Vector3(0, 11, -5);
+        transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
     }
 
     private void LateUpdate()
     {
-        sizeOffset = playerController.transform.localScale.y * 0.5f;
-        playerCamera.orthographicSize = sizeOffset;
-        transform.position = player.transform.position + offset;
+        scaleChange = player.scaleChange.y;
+        transposer.m_FollowOffset = new Vector3(0, scaleChange * 1.46f + 0.56f, scaleChange * -1.37f - 1.26f);
     }
 
 
