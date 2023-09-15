@@ -58,6 +58,11 @@ public class PlayerController : MonoBehaviour
         ModifySize();
     }
 
+    public float GetEnergy()
+    {
+        return this.energy;
+    }
+
     void TakeDamage()
     {
 

@@ -22,18 +22,25 @@ public class PlayerDash : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(Dash());
+            if (playerCon.GetEnergy() > 15)
+            {
+                StartCoroutine(Dash());
+            }
+
         }
     }
 
     IEnumerator Dash()
     {
         float startTime = Time.time;
-        playerCon.AbsorbObject(-20);
-        while(Time.time < startTime + dashTime)
+        playerCon.AbsorbObject(-15);
+        while (Time.time < startTime + dashTime)
         {
-            playerCon.controller.Move(playerCon.direction * dashSpeed * Time.deltaTime); 
+            playerCon.controller.Move(playerCon.direction * dashSpeed * Time.deltaTime);
             yield return null;
         }
+
+
+
     }
 }
