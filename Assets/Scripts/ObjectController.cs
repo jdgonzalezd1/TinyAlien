@@ -4,29 +4,37 @@ using UnityEngine;
 
 public class ObjectController : MonoBehaviour
 {
-    public readonly string[] objectType = {"food", "cityObject","person", "enemy", "building"};
+    public readonly string[] objectType = { "food", "cityObject", "enemy", "building" };
     public float energyAmount;
     PlayerController player;
     [SerializeField] int typeIndex;
 
     private void Start()
     {
-        player = FindAnyObjectByType<PlayerController>();
+        player = FindAnyObjectByType<PlayerController>();      
+    }
+
+    private void Update()
+    {
+        if (gameObject.tag == "City Object" && player.stage >= 2 ||
+            gameObject.tag == "People" && player.stage >= 3 ||
+            gameObject.tag == "Building" && player.stage >= 3)
+        {
+            gameObject.GetComponent<Collider>().isTrigger = true;
+        }
     }
     bool CheckStage()
     {
-        int playerStage = player.stage;
-        if (objectType[typeIndex] == "food" && playerStage >= 1
-            || objectType[typeIndex] == "cityObject" && playerStage >= 2
-            || objectType[typeIndex] == "person" && playerStage >= 3
-            || objectType[typeIndex] == "building" && playerStage >= 3
-            || objectType[typeIndex] == "enemy" && playerStage >= 3)
+        int playerStage = player.stage;        
+        if (objectType[typeIndex] == "food" && playerStage >= 1)
         {
             return true;
-        } else
+        }else if (playerStage >= 2)
         {
-            return false;
+            
         }
+        return false;
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,4 +48,5 @@ public class ObjectController : MonoBehaviour
             }
         }
     }
+
 }
