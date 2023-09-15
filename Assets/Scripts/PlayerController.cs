@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        scaleChange = new Vector3(0.01f, 0.01f, 0.01f);
+        scaleChange = new Vector3(0.1f, 0.1f, 0.1f);
     }
     private void FixedUpdate()
     {
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             direction = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(direction.normalized * movementSpeed * Time.deltaTime);
+            controller.SimpleMove(direction.normalized * movementSpeed * Time.deltaTime);
         }
     }
 
