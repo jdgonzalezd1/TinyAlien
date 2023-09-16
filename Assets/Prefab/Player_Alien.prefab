@@ -1083,6 +1083,7 @@ GameObject:
   - component: {fileID: 7480621428940889796}
   - component: {fileID: 3406741867203220971}
   - component: {fileID: 6279827779744423497}
+  - component: {fileID: 3656371821873446930}
   m_Layer: 0
   m_Name: Player_Alien
   m_TagString: Player
@@ -1099,7 +1100,7 @@ Transform:
   m_GameObject: {fileID: 7517509187699508701}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.34, y: 0.78, z: -7.29}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1121,14 +1122,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4feafe85b2e7c8049a62ac778c43f430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energy: 0
+  energy: 10
   stage: 1
+  eatTime: 0.5
   direction: {x: 0, y: 0, z: 0}
   scaleChange: {x: 0, y: 0, z: 0}
   positionChange: {x: 0, y: 0, z: 0}
+  movementSpeed: 150
   player: {fileID: 7517509187699508701}
-  movementSpeed: 10
   controller: {fileID: 6279827779744423497}
+  alienSmall: {fileID: 3747472331046861911}
+  alienMedium: {fileID: 8617434178824990651}
+  alienLarge: {fileID: 7563705861265102992}
+  energyBar: {fileID: 0}
+  animator: {fileID: 3656371821873446930}
 --- !u!114 &3406741867203220971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1141,7 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5c2546f088e1447b3410b6b5f0cacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 30
+  dashSpeed: 15
   dashTime: 0.25
   dashCooldown: 0
 --- !u!143 &6279827779744423497
@@ -1163,13 +1170,34 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 0.7
-  m_Radius: 0.2
+  m_Height: 0.35
+  m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.01
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.3, z: 0}
+  m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!95 &3656371821873446930
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517509187699508701}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 26945bc8de714bc4b8ce615988571093, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7535264119524962467
 GameObject:
   m_ObjectHideFlags: 0

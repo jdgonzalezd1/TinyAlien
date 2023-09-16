@@ -44,10 +44,11 @@ GameObject:
   - component: {fileID: 4416740651012696}
   - component: {fileID: 33004117211513152}
   - component: {fileID: 23019197907045262}
-  - component: {fileID: 64300851794615108}
+  - component: {fileID: 9132890076099732091}
+  - component: {fileID: 6398109544940387727}
   m_Layer: 0
   m_Name: Supermaket
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,8 +130,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64300851794615108
-MeshCollider:
+--- !u!65 &9132890076099732091
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,10 +148,22 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 7a2a20b7d787ff94dbb3d2badebe5d32, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.3574724, y: 0.20908052, z: 0.09395708}
+  m_Center: {x: 0.1327362, y: -0.08245974, z: 0.046964448}
+--- !u!114 &6398109544940387727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433151737428836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2808d7a47d8c2442aa707c58275261a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyAmount: 100
 --- !u!1001 &2409445793624446633
 PrefabInstance:
   m_ObjectHideFlags: 0

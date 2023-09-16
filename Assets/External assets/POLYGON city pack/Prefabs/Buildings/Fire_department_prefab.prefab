@@ -43,10 +43,11 @@ GameObject:
   - component: {fileID: 4352992991529354}
   - component: {fileID: 33492394308292534}
   - component: {fileID: 23720414374091438}
-  - component: {fileID: 64847346104089800}
+  - component: {fileID: 1357151494152169748}
+  - component: {fileID: 1354865113400846759}
   m_Layer: 0
   m_Name: Fire_department
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,8 +128,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64847346104089800
-MeshCollider:
+--- !u!65 &1357151494152169748
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -145,7 +146,19 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 91ddddc8ac960484a9abe1b9c024542e, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.19, y: 0.26800188, z: 0.13770099}
+  m_Center: {x: 0.07499997, y: 0.036776796, z: 0.06885048}
+--- !u!114 &1354865113400846759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859262065797286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2808d7a47d8c2442aa707c58275261a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyAmount: 100

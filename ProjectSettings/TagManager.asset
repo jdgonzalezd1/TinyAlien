@@ -8,6 +8,7 @@ TagManager:
   - City Object
   - Food
   - People
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class ObjectController : MonoBehaviour
 {
-    public readonly string[] objectType = { "food", "cityObject", "enemy", "building" };
-    public float energyAmount;
+    public int energyAmount;
     PlayerController player;
-    [SerializeField] int typeIndex;
 
     private void Start()
     {
-        player = FindAnyObjectByType<PlayerController>();      
+        player = FindAnyObjectByType<PlayerController>();
     }
 
     private void Update()
@@ -25,13 +23,13 @@ public class ObjectController : MonoBehaviour
     }
     bool CheckStage()
     {
-        int playerStage = player.stage;        
-        if (objectType[typeIndex] == "food" && playerStage >= 1)
+        int playerStage = player.stage;
+        if (gameObject.tag == "Food" && playerStage >= 1 ||
+            gameObject.tag == "City Object" && playerStage >= 2 ||
+            gameObject.tag == "People" && playerStage >= 3 ||
+            gameObject.tag == "Building" && playerStage >= 3)
         {
             return true;
-        }else if (playerStage >= 2)
-        {
-            
         }
         return false;
 

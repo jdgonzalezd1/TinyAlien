@@ -86,7 +86,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyAmount: 10
-  typeIndex: 0
 --- !u!65 &7393126633838399413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106,5 +105,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.18217129, y: 0.2548558, z: 0.19187827}
-  m_Center: {x: 0, y: 0.123071164, z: 0}
+  m_Size: {x: 0.18217129, y: 6.638504, z: 0.19187827}
+  m_Center: {x: 0, y: 3.3148956, z: 0}

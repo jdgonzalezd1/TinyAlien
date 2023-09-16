@@ -17,12 +17,12 @@ public class CameraController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        scaleChange = player.transform.localScale.y;
-        transposer.m_CameraDistance = scaleChange + 2;
     }
 
     private void LateUpdate()
     {
+        scaleChange = player.transform.localScale.y;
+        transposer.m_CameraDistance = scaleChange + 0.5f;
     }
 
 
