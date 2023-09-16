@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class PauseMenu_Script : MonoBehaviour
 {
     public GameObject pauseMenuUI;
+    PlayerController playerController;
 
     public void Start()
     {
         pauseMenuUI.SetActive(false);
+        playerController = FindAnyObjectByType<PlayerController>();
     }
 
     public void Update()
@@ -20,18 +22,19 @@ public class PauseMenu_Script : MonoBehaviour
             if(pauseMenuUI.activeInHierarchy == false)
             {
                 pauseMenuUI.SetActive(true);
+                playerController.SetMovement(false);
                 Cursor.lockState = CursorLockMode.None;
             }
             else
             {
-                Resume();
+                Resume();                
             }
         }
     }
 
     public void TryAgain()
     {
-        //Reset the game when the player fail or die.
+        SceneManager.LoadScene(1);
     }
 
     //unpause the game, and hide the mouse cursor 
@@ -39,6 +42,7 @@ public class PauseMenu_Script : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        playerController.SetMovement(true);
     }
 
 

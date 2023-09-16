@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -6,22 +7,33 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float energy = 10f;
-    public float energyMin = 10f;
+    public int energy = 10;
     public int stage;
+    public float eatTime;
+
+    [HideInInspector] public Vector3 direction;
+    [HideInInspector] public Vector3 scaleChange, positionChange;
+    [SerializeField] float movementSpeed;
+    bool canMove = true;
     float xMov, zMov;
     float rotateTime;
     float rotateVelocity;
-    public Vector3 direction;
-    public Vector3 scaleChange, positionChange;
+
+
     [SerializeField] GameObject player;
-    [SerializeField] float movementSpeed;
     public CharacterController controller;
+    public GameObject alienSmall;
+    public GameObject alienMedium;
+    public GameObject alienLarge;
+    public EnergyBar energyBar;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
         scaleChange = new Vector3(0.01f, 0.01f, 0.01f);
+        energyBar.SetMaxEnergy(3000);
+        energyBar.SetEnergy(energy);
         ModifySize();
         ModifyStage();
     }
@@ -32,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        PlayerMovement();        
+        PlayerMovement();
         ModifySize();
     }
 
@@ -40,17 +52,24 @@ public class PlayerController : MonoBehaviour
     {
         xMov = Input.GetAxisRaw("Horizontal");
         zMov = Input.GetAxisRaw("Vertical");
-
-        Vector3 dir = new Vector3(xMov, 0, zMov).normalized;
-
-        if (dir.magnitude >= 0.1f)
+        if (canMove)
         {
-            float targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotateVelocity, rotateTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            Vector3 dir = new Vector3(xMov, 0, zMov).normalized;
 
-            direction = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.SimpleMove(direction.normalized * movementSpeed * Time.deltaTime);
+            if (dir.magnitude >= 0.1f)
+            {
+                float targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotateVelocity, rotateTime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+                direction = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                controller.SimpleMove(direction.normalized * movementSpeed * Time.deltaTime);
+                animator.SetBool("isMoving", true);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
         }
     }
 
@@ -59,21 +78,16 @@ public class PlayerController : MonoBehaviour
         player.transform.localScale = scaleChange * this.energy;
     }
 
-    public void AbsorbObject(float energy)
-    {
-        if (this.energy + energy > energyMin)
-        {
-            this.energy += energy;
-        }
+    public void AbsorbObject(int energy)
+    {        
+        this.energy += energy;
+        energyBar.SetEnergy(this.energy);
+        StartCoroutine(Eating());
+        energyBar.WinCondition();
         Debug.Log("Energy: " + this.energy);
         ModifyStage();
-
     }
 
-    public float GetEnergy()
-    {
-        return this.energy;
-    }
 
     void TakeDamage()
     {
@@ -82,17 +96,48 @@ public class PlayerController : MonoBehaviour
 
     void ModifyStage()
     {
-        if(energy < 100)
+        if (energy < 100)
         {
             stage = 1;
-        }else if (energy >= 100 && energy <= 199)
+            alienSmall.SetActive(true);
+            alienMedium.SetActive(false);
+        }
+        else if (energy >= 100 && energy <= 199)
         {
             stage = 2;
-        }else if (energy >= 200 && energy <= 299)
+            alienMedium.SetActive(true);
+            alienSmall.SetActive(false);
+            alienLarge.SetActive(false);
+        }
+        else if (energy >= 200 && energy <= 299)
         {
             stage = 3;
+            alienLarge.SetActive(true);
+            alienSmall.SetActive(false);
+            alienMedium.SetActive(false);
         }
         Debug.Log("Stage: " + stage);
+    }
+
+    IEnumerator Eating()
+    {
+        float startTime = Time.time;
+        while (Time.time < startTime + eatTime)
+        {
+            animator.SetBool("Eating", true);
+            yield return null;
+        }
+        animator.SetBool("Eating", false);
+    }
+
+    public float GetEnergy()
+    {
+        return this.energy;
+    }
+
+    public void SetMovement(bool flag)
+    {
+        this.canMove = flag;
     }
 
 }

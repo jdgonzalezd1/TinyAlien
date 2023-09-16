@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectController : MonoBehaviour
 {
-    public float energyAmount;
+    public int energyAmount;
     PlayerController player;
 
     private void Start()
