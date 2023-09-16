@@ -20,7 +20,7 @@ public class PlayerDash : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && playerCon.energy > 19 && dashCooldown <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && dashCooldown <= 0)
         {
             if (playerCon.GetEnergy() > 15)
             {
