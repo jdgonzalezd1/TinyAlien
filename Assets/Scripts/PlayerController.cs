@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         scaleChange = new Vector3(0.01f, 0.01f, 0.01f);
-        energyBar.SetMaxEnergy(1000);
+        energyBar.SetMaxEnergy(2000);
         energyBar.SetEnergy(energy);
         ModifySize();
         ModifyStage();
@@ -99,20 +99,20 @@ public class PlayerController : MonoBehaviour
 
     void ModifyStage()
     {
-        if (energy < 333)
+        if (energy < 666)
         {
             stage = 1;
             alienSmall.SetActive(true);
             alienMedium.SetActive(false);
         }
-        else if (energy >= 333 && energy <= 665)
+        else if (energy >= 666 && energy <= 1333)
         {
             stage = 2;
             alienMedium.SetActive(true);
             alienSmall.SetActive(false);
             alienLarge.SetActive(false);
         }
-        else if (energy >= 666 && energy <= 1000)
+        else if (energy >= 1334 && energy <= 2000)
         {
             stage = 3;
             alienLarge.SetActive(true);

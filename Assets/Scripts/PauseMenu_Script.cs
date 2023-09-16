@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class PauseMenu_Script : MonoBehaviour
 {
     public GameObject pauseMenuUI;
+    GameObject[] enemy;
+    GameObject[] spawner;
     PlayerController playerController;
 
     public void Start()
     {
         pauseMenuUI.SetActive(false);
-        playerController = FindAnyObjectByType<PlayerController>();
+        playerController = FindAnyObjectByType<PlayerController>();        
     }
 
     public void Update()
@@ -23,6 +25,16 @@ public class PauseMenu_Script : MonoBehaviour
             {
                 pauseMenuUI.SetActive(true);
                 playerController.SetMovement(false);
+                enemy = GetEnemies();
+                spawner = GetSpawner();
+                for(int i = 0; i < enemy.Length; i++)
+                {
+                    enemy[i].SetActive(false);
+                }
+                for(int i = 0;i < spawner.Length; i++)
+                {
+                    spawner[i].SetActive(false);
+                }
                 Cursor.lockState = CursorLockMode.None;
             }
             else
@@ -43,6 +55,17 @@ public class PauseMenu_Script : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         playerController.SetMovement(true);
+        for (int i = 0; i < enemy.Length; i++)
+        {
+            enemy[i].SetActive(true);
+        }
+
+        for (int i = 0; i< spawner.Length; i++)
+        {
+            spawner[i].SetActive(true);
+        }
+        enemy = null;
+        spawner = null;
     }
 
 
@@ -50,5 +73,15 @@ public class PauseMenu_Script : MonoBehaviour
     public void BackToMainMenu()
     {        
         SceneManager.LoadScene(0);
+    }
+
+    GameObject[] GetEnemies()
+    {
+        return GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
+    GameObject[] GetSpawner()
+    {
+        return GameObject.FindGameObjectsWithTag("People");
     }
 }

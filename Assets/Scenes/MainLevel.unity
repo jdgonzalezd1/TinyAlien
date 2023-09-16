@@ -2394,7 +2394,7 @@ GameObject:
   - component: {fileID: 440415350}
   m_Layer: 0
   m_Name: SpawnManager
-  m_TagString: Untagged
+  m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5338,7 +5338,7 @@ GameObject:
   - component: {fileID: 1079600683}
   m_Layer: 0
   m_Name: SpawnManager 3
-  m_TagString: Untagged
+  m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5582,11 +5582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4843172445342861661, guid: 080608ff01f346542a5179f216767a26, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 80
+      value: 108.1
       objectReference: {fileID: 0}
     - target: {fileID: 4843172445342861661, guid: 080608ff01f346542a5179f216767a26, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10
+      value: -46.7
       objectReference: {fileID: 0}
     - target: {fileID: 5719773935366166247, guid: 080608ff01f346542a5179f216767a26, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6168,7 +6168,7 @@ GameObject:
   - component: {fileID: 1198170928}
   m_Layer: 0
   m_Name: SpawnManager 2
-  m_TagString: Untagged
+  m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6721,7 +6721,7 @@ GameObject:
   - component: {fileID: 1352875724}
   m_Layer: 0
   m_Name: SpawnManager 4
-  m_TagString: Untagged
+  m_TagString: People
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10312,6 +10312,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: City Object
       objectReference: {fileID: 0}
+    - target: {fileID: 601302725584772173, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 673560089069109192, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: City Object
@@ -10323,6 +10327,10 @@ PrefabInstance:
     - target: {fileID: 691617782926230064, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 720844162223322447, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 781859117111381205, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
@@ -10359,6 +10367,14 @@ PrefabInstance:
     - target: {fileID: 989978522319718985, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015121504324769043, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047150687510395362, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1067635343221926444, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
@@ -10448,6 +10464,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1870951664769179876, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1874291329686346772, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -10463,6 +10483,10 @@ PrefabInstance:
     - target: {fileID: 1904411933607615857, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: City Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937433827608067012, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1940187752730759305, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
@@ -10564,6 +10588,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Food
       objectReference: {fileID: 0}
+    - target: {fileID: 2593948544166036856, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2609086758805083240, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: Food
@@ -10608,6 +10636,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: City Object
       objectReference: {fileID: 0}
+    - target: {fileID: 3271500924913384044, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3312278592747805428, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -10631,6 +10663,10 @@ PrefabInstance:
     - target: {fileID: 3579022339499658745, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 3613899459830684383, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3639495805505804014, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
@@ -10712,6 +10748,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Food
       objectReference: {fileID: 0}
+    - target: {fileID: 4027142729039632196, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4065778693220438815, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: Food
@@ -10744,6 +10784,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: City Object
       objectReference: {fileID: 0}
+    - target: {fileID: 4218939256473672488, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4231208522865085887, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: City Object
@@ -10755,6 +10799,10 @@ PrefabInstance:
     - target: {fileID: 4271513938773370542, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: City Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288914330342721906, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4307871307632310847, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
@@ -10812,6 +10860,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: City Object
       objectReference: {fileID: 0}
+    - target: {fileID: 4778286780366208246, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4780832102094852361, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: Food
@@ -10819,6 +10871,14 @@ PrefabInstance:
     - target: {fileID: 4786709595129230785, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: City Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787656047303579754, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881722895493187319, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4914648577589304597, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
@@ -10839,6 +10899,10 @@ PrefabInstance:
     - target: {fileID: 5029320062198402488, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029904315437409683, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5065761648803529094, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
@@ -10904,6 +10968,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: City Object
       objectReference: {fileID: 0}
+    - target: {fileID: 5458078092443295112, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5485883384730209052, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: City Object
@@ -10935,6 +11003,10 @@ PrefabInstance:
     - target: {fileID: 5702535065939128443, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: City Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713486976844516047, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5798987017937426837, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
@@ -10972,6 +11044,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: City Object
       objectReference: {fileID: 0}
+    - target: {fileID: 6140228770096888142, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6189911774219728954, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: Building
@@ -10979,6 +11055,10 @@ PrefabInstance:
     - target: {fileID: 6214091681094170704, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214319356423589961, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6255194988673368769, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
@@ -10991,6 +11071,10 @@ PrefabInstance:
     - target: {fileID: 6312461469829009864, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449791400237683234, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6459413845981085267, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_Convex
@@ -11007,6 +11091,10 @@ PrefabInstance:
     - target: {fileID: 6565091049230708207, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: City Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568603540066949458, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6606203402342239865, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_Convex
@@ -11043,6 +11131,10 @@ PrefabInstance:
     - target: {fileID: 6866792229890025026, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: City Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881932400014133512, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6883469070988240940, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
@@ -11168,6 +11260,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: City Object
       objectReference: {fileID: 0}
+    - target: {fileID: 7819623273477006481, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7857947313790476325, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: Food
@@ -11204,6 +11300,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Food
       objectReference: {fileID: 0}
+    - target: {fileID: 8265284600533832912, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8312464282135263965, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: City Object
@@ -11223,6 +11323,10 @@ PrefabInstance:
     - target: {fileID: 8331640514607643208, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342182398008144610, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8363972903845312008, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
@@ -11320,6 +11424,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: City Object
       objectReference: {fileID: 0}
+    - target: {fileID: 8758528737096258893, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759294356245161420, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8763240039485276519, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: Food
@@ -11343,6 +11455,14 @@ PrefabInstance:
     - target: {fileID: 8867122195762853480, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
       value: City Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931855447343136055, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980384049979480930, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
+      propertyPath: energyAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9016571650079342590, guid: c16c413050928c0479f44cd8c48cd443, type: 3}
       propertyPath: m_TagString
