@@ -44,8 +44,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        PlayerMovement();
-        ModifySize();
+        PlayerMovement();        
+        // ModifySize();
     }
 
     void PlayerMovement()
@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
     void ModifySize()
     {
         player.transform.localScale = scaleChange * this.energy;
+        Debug.Log("Energy: " + this.energy);
     }
 
     public void AbsorbObject(int energy)
@@ -85,6 +86,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(Eating());
         energyBar.WinCondition();
         Debug.Log("Energy: " + this.energy);
+        ModifySize();
         ModifyStage();
     }
 
