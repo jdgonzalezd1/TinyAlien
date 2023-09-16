@@ -189,8 +189,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.006595495, y: 0.007772122, z: 0.0062625688}
-  m_Center: {x: 0.000021411106, y: -0.00071725855, z: -0.000036500394}
+  m_Size: {x: 0.006595495, y: 0.030623363, z: 0.0062625683}
+  m_Center: {x: 0.000021411095, y: 0.010708368, z: -0.00003650043}
 --- !u!114 &1958248040023908017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,8 +257,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3.560001, z: 1}
+  m_Center: {x: 0, y: 1.625975, z: -0}
 --- !u!114 &821463377644466491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,8 +325,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3.8289964, z: 1}
+  m_Center: {x: 0, y: 1.4144984, z: -0}
 --- !u!114 &6625663753849607864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4639998926729364}
+  - component: {fileID: 511691586282514017}
   m_Layer: 0
   m_Name: Bush 2 mass prefab
   m_TagString: Untagged
@@ -462,6 +463,25 @@ Transform:
   - {fileID: 4633396396495170}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &511691586282514017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565387844118504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1589961653758884
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,8 +619,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 4.831485, z: 1}
+  m_Center: {x: 0, y: 1.9157398, z: -0}
 --- !u!114 &5946575783683678313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,8 +771,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 4.234151, z: 1}
+  m_Center: {x: 0, y: 1.6170764, z: -0}
 --- !u!114 &5973905896591702515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,8 +923,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3.8197737, z: 1}
+  m_Center: {x: 0, y: 1.4098876, z: -0}
 --- !u!114 &8424816097775383264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,8 +1075,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 4.3634458, z: 1}
+  m_Center: {x: 0, y: 1.6817249, z: -0}
 --- !u!114 &245197447043227077
 MonoBehaviour:
   m_ObjectHideFlags: 0

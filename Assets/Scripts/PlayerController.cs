@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
     void ModifySize()
     {
         player.transform.localScale = scaleChange * this.energy;
+        movementSpeed = 0.7f * this.energy + 145;
         Debug.Log("Energy: " + this.energy);
     }
 

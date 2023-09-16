@@ -7,17 +7,19 @@ public class EnemyController : MonoBehaviour
 {
     public int damageTaken;
     PlayerController playerController;
-    public Transform player;
+    public GameObject player;
     private NavMeshAgent agent;
     private void Start()
     {
         playerController = FindAnyObjectByType<PlayerController>();
+        player = FindAnyObjectByType<PlayerController>().gameObject;
         agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        agent.destination = player.position;
+
+        agent.destination = player.transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +27,7 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerController.AbsorbObject(damageTaken);
+            Destroy(gameObject);
         }
     }
 
