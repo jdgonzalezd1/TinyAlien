@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     Vector3 spawnStreet;
     public int stageEnable;
     public float spawnPosX, spawnPosZ;
-    public float spawnInterval = 5.0f;
+    public float spawnInterval = 10.0f;
     float startDelay = 1.0f;
     
 

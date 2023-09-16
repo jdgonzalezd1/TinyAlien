@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2808d7a47d8c2442aa707c58275261a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyAmount: 50
+  energyAmount: 100
 --- !u!1001 &6406578096346838541
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -35,8 +35,7 @@ public class PlayerDash : MonoBehaviour
 
     IEnumerator Dash()
     {
-        float startTime = Time.time;
-        playerCon.AbsorbObject(-10);
+        float startTime = Time.time;        
         while(Time.time < startTime + dashTime)
         {
             playerCon.controller.Move(playerCon.direction * dashSpeed * Time.deltaTime);
