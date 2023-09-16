@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        scaleChange = new Vector3(0.1f, 0.1f, 0.1f);
+        scaleChange = new Vector3(0.01f, 0.01f, 0.01f);
         ModifySize();
         ModifyStage();
     }
@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        PlayerMovement();
+        PlayerMovement();        
+        ModifySize();
     }
 
     void PlayerMovement()
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour
         }
         Debug.Log("Energy: " + this.energy);
         ModifyStage();
-        ModifySize();
+
     }
 
     public float GetEnergy()

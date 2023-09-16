@@ -10,7 +10,7 @@ public class PlayerDash : MonoBehaviour
     PlayerController playerCon;
     [SerializeField] float dashSpeed;
     [SerializeField] float dashTime;
-    [SerializeField] float dashCooldown;
+    [SerializeField] float dashCooldown = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +20,16 @@ public class PlayerDash : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && playerCon.energy > 19)
+        if (Input.GetKeyDown(KeyCode.Space) && playerCon.energy > 19 && dashCooldown <= 0)
         {
             if (playerCon.GetEnergy() > 15)
             {
                 StartCoroutine(Dash());
+                dashCooldown = 1.0f;
             }
-
+        } else
+        {
+            dashCooldown -= Time.deltaTime;
         }
     }
 

@@ -43,10 +43,11 @@ GameObject:
   - component: {fileID: 4744037631970722}
   - component: {fileID: 33538800175793430}
   - component: {fileID: 23280622695353004}
-  - component: {fileID: 64548479155205618}
+  - component: {fileID: 1322076486037889232}
+  - component: {fileID: 9161635917356706939}
   m_Layer: 0
   m_Name: Building_C1
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,8 +130,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64548479155205618
-MeshCollider:
+--- !u!65 &1322076486037889232
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,7 +148,19 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: aa2b0ff9d71916c4aa2e1d9699c459fc, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.099539824, y: 0.22571194, z: 0.29727337}
+  m_Center: {x: 0.039401364, y: 0.027650423, z: 0.14863668}
+--- !u!114 &9161635917356706939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961242768103578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2808d7a47d8c2442aa707c58275261a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyAmount: 50
