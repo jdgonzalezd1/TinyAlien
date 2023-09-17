@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public int stage;
     public float eatTime;
 
+    public AudioSource audioS;
+    public AudioClip eatingAudio;
+
     [HideInInspector] public Vector3 direction;
     [HideInInspector] public Vector3 scaleChange, positionChange;
     [SerializeField] float movementSpeed;
@@ -81,7 +84,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void AbsorbObject(int energy)
-    {        
+    {
+        audioS.PlayOneShot(eatingAudio, 0.5f);
         this.energy += energy;
         energyBar.SetEnergy(this.energy);
         StartCoroutine(Eating());
@@ -127,6 +131,7 @@ public class PlayerController : MonoBehaviour
         float startTime = Time.time;
         while (Time.time < startTime + eatTime)
         {
+            //audioS.PlayOneShot(eatingAudio, 0.5f);
             animator.SetBool("Eating", true);
             yield return null;
         }

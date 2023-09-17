@@ -6,13 +6,16 @@ using UnityEngine.UI;
 
 public class EnergyBar : MonoBehaviour
 {
+    public static EnergyBar instance;
     public Slider slider;
     public GameObject winScreen;
     public GameObject loseScreen;
     public PlayerController playerController;
 
+
     private void Start()
     {
+        instance = this;
         playerController = FindAnyObjectByType<PlayerController>();
     }
 

@@ -18,6 +18,19 @@ public class PauseMenu_Script : MonoBehaviour
 
     public void Update()
     {
+        if(EnergyBar.instance.winScreen.activeInHierarchy == true || EnergyBar.instance.loseScreen.activeInHierarchy == true)
+        {
+            enemy = GetEnemies();
+            spawner = GetSpawner();
+            for (int i = 0; i < enemy.Length; i++)
+            {
+                enemy[i].SetActive(false);
+            }
+            for (int i = 0; i < spawner.Length; i++)
+            {
+                spawner[i].SetActive(false);
+            }
+        }
         //Pause the game, and show the mouse cursor
         if (Input.GetKeyDown(KeyCode.Escape))
         {
