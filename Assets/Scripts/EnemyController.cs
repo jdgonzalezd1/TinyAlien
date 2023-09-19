@@ -9,8 +9,11 @@ public class EnemyController : MonoBehaviour
     PlayerController playerController;
     public GameObject player;
     private NavMeshAgent agent;
+    public AudioSource audioExplotion;
+    public AudioClip explotion;
     private void Start()
     {
+        audioExplotion = FindAnyObjectByType<PlayerController>().GetComponent<AudioSource>();
         playerController = FindAnyObjectByType<PlayerController>();
         player = FindAnyObjectByType<PlayerController>().gameObject;
         agent = GetComponent<NavMeshAgent>();
@@ -26,8 +29,10 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            playerController.AbsorbObject(damageTaken);
-            Destroy(gameObject);
+            playerController.AbsorbObject(damageTaken);           
+            audioExplotion.PlayOneShot(explotion, explotion.length);          
+
+            Destroy(gameObject, 0.2f);
         }
     }
 

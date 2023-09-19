@@ -24,6 +24,7 @@ public class PlayerDash : MonoBehaviour
         {
             if (playerCon.GetEnergy() > 15)
             {
+                playerCon.energy -= 15;
                 StartCoroutine(Dash());
                 dashCooldown = 1.0f;
             }
@@ -38,6 +39,7 @@ public class PlayerDash : MonoBehaviour
         float startTime = Time.time;        
         while(Time.time < startTime + dashTime)
         {
+            
             playerCon.controller.Move(playerCon.direction * dashSpeed * Time.deltaTime);
             yield return null;
         }
