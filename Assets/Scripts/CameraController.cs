@@ -15,15 +15,9 @@ public class CameraController : MonoBehaviour
         transposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
     }
 
-    private void FixedUpdate()
-    {
-    }
-
     private void LateUpdate()
     {
         scaleChange = player.transform.localScale.y;
         transposer.m_CameraDistance = scaleChange + 0.5f;
     }
-
-
 }

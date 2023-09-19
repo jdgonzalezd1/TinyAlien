@@ -9640,6 +9640,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3406741867203220971, guid: 9f250d56f6cb47d4ea5a20703553867a, type: 3}
+      propertyPath: dashCooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3747472331046861911, guid: 9f250d56f6cb47d4ea5a20703553867a, type: 3}
       propertyPath: m_IsActive
       value: 1
